@@ -1,1 +1,178 @@
-hello  this is power by github desktop
+Crank Storyboard 7.0
+
+New Features and Functionality
+
+Storyboard Designer
+-------------------
+
+* You can now select locked components in the
+editor.
+
+* Improved UI for glyph selecting in the resource
+export configuration editor.
+
+* There is now a data transform action that allows
+for transforms to be applied to event data.
+
+* A export prefix and postfix can now be applied
+globally and per individual resource in the C
+header export.
+
+* Wrapping is now available for scrolling layers
+and tables.
+
+* The dither option for RGB565 now uses an algorithm
+based on the Floyd Steinberg algorithm.
+
+* There is now a gradient render extension availble.
+
+* A render extension can now be applied to a control
+to act as a mask for that control.
+
+* An SVG can now be use as an image in Designer.
+This SVG will be rasterized on export to the sizes
+that are being used in the UI. 
+
+* Direct editing of text has been improved to use
+the same font and size for the direct editing
+interface.
+
+* The header file export process now takes a lot
+less time to complete.
+
+* The events gre.screendump.complete and
+gre.redraw_complete have been added to the list
+of selectable events in Designer.
+
+* The Lua API for dumping font resources has been
+modified so that it can dump all the resources
+for a font file without needing to specify a font
+size. 
+
+* Allow and editor style resizing of table cells
+similar to what other tools with tables allow.
+
+* Storyboard color picker UI has been enhanced.
+
+* The screen dump action now allows you to specify
+a region of the screen to be dumped to a screen
+dump image.
+
+* The C header exporter now has an option to
+specify the image stride alignment when exporting
+images in direct draw mode.
+
+* The C header exporter now has an option for
+exporting Direct RGB8888 images with premultiplied
+alpha. This is only supported with the VGLite
+render manager. 
+
+* A new "Screen Drag" screen transition has been
+added.
+
+* The C header export will now perform a smart export
+of images based on what the global value is. If the
+global value is set to RGB565 for example, the C header
+export will export any images that have alpha as
+Direct RLE8888 or Direct 8888 based on which is smaller.
+
+* The palette is now themed correctly when using
+the dark theme.
+
+* There is now a toggle action that will toggle a
+data variable from one value to another without
+the need for going to Lua.
+
+* The table padding labels now update based on
+whether the horizontal or vertical option is checked.
+
+* The error messages for the PSD import process have
+been expanded to include more details about why a
+PSD failed to import.
+
+* The variable list in the render extension
+properties has been removed.  
+
+Storyboard Engine
+-----------------
+
+* The function gre.animation_get_state now reports
+the duration of an animation.
+
+* Canvas now has support for alignment when
+drawing images.
+
+* A table can now be passed to the
+gre.get_data Lua API call.
+
+* The canvas API now has the ability to render
+a circle.
+
+* The canvas render extension supports rotating
+text arbitrarily.
+
+* A user can now position table cells, and resize
+table templates at runtime. 
+
+* An event listener API has been added to Lua.
+
+* The runtime now supports dumping a region of the
+screen to a screen dump image.
+
+* There is now an API to cancel screen transitions.
+
+* The loading of mapargs in Lua calls is deferred
+until the user requests a member of the mapargs.
+
+* Storyboard engine now has support for the Wayland
+IVI shell interface for the OpenGL render manager.
+
+* The iOS runtime is now built with the latest SDK
+from Apple.
+
+* The metrics plugin is now able to provide memory
+information on the FreeRTOS MCUXPresso targets.
+
+* The version of Freetype that is used with the
+freetype font manager plugin was updated to 2.10.2.
+
+* Storyboard engine now supports the rendering of
+color emoji's that are stored in TTF files as bitmaps. 
+
+* The gre.redraw event now has an event payload
+that contains the rectangle of the area that was
+redrawn.
+
+* System and performance logging now use a high
+resolution timestamp in microsecond units.
+
+* Scrolling will now accelerate when consecutive
+gestures are performed.
+
+* The logging now works with the slog2 application
+on QNX platforms.
+
+* There is now a Lua API to check animation state
+and it will report one of  progress, paused, stopped,
+or complete.
+
+* Animations can now be controlled through a run
+an animation to particular points in the animation
+cycle. 
+
+* The grd_width and grd_height variables can now
+be passed to GL shaders.
+
+* Added an interface so that plugins can be notified
+of when text is being drawn, and how it is being drawn.
+
+* The PowerVR version that Storyboard builds it's
+Windows OpenGL render manager against was updated to
+version 2019r2
+
+* The Android runtime libraries now have a DT_SONAME,
+which removes the warning that was generated when
+using an Android API greater than version 23.
+
+* The total amount of time that it takes to load
+Lua files is reported in
